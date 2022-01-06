@@ -1,15 +1,30 @@
 <!DOCTYPE html>
 <html>
-<title>W3.CSS Template</title>
+<title>Portfolio</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Karma">
+<link rel="stylesheet" href="grayscale-ambient-background/style.css">
 <style>
 body,h1,h2,h3,h4,h5,h6 {font-family: "Karma", sans-serif}
 .w3-bar-block .w3-bar-item {padding:20px}
 </style>
 <body>
+<canvas id="projector">Your browser does not support the Canvas element.</canvas>
+  
+<!-- Popups -->
+<div id="popup_clone" class="w3-center w3-animate-opacity  w3-modal">
+  <div class="w3-display-middle w3-modal-content w3-card-4">
+    <header class="w3-container w3-sand"> 
+      <span onclick="document.getElementById('popup_clone').style.display='none'" class="w3-button w3-display-topright">&times;</span>
+      <h2>Header</h2>
+    </header>
+    <div class="w3-container">
+      <p>Thank to pop me out of that button, but now i'm done so you can close this window.			Thank to pop me out of that button, but now i'm done so you can close this window.			Thank to pop me out of that button, but now i'm done so you can close this window.			Thank to pop me out of that button, but now i'm done so you can close this window.			Thank to pop me out of that button, but now i'm done so you can close this window.</p>
+    </div>
+  </div>
+</div>
 
 <!-- Sidebar (hidden by default) -->
 <nav class="w3-sidebar w3-bar-block w3-card w3-top w3-xlarge w3-animate-left" style="display:none;z-index:2;width:40%;min-width:300px" id="mySidebar">
@@ -24,10 +39,11 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Karma", sans-serif}
 <div class="w3-top">
   <div class="w3-white w3-xlarge" style="max-width:1200px;margin:auto">
     <div class="w3-button w3-padding-16 w3-left" onclick="w3_open()">☰</div>
-    <div class="w3-right w3-padding-16">Contact</div>
+    <div class="w3-right w3-padding-16">Top Text</div>
     <div class="w3-center w3-padding-16">Test Portfolio</div>
   </div>
 </div>
+
   
 <!-- !PAGE CONTENT! -->
 <div class="w3-main w3-content w3-padding" style="max-width:1200px;margin-top:100px">
@@ -60,7 +76,8 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Karma", sans-serif}
     </div>
 	  <div class="w3-quarter">
       <h3>Clone</h3>
-      <img src="Images/Thumbnails/clone_thumbnail.png" width="208" height="167">
+	  <button onclick="document.getElementById('popup_clone').style.display='block'" class="w3-btn w3-white"><img src="Images/Thumbnails/clone_thumbnail.png" width="208" height="167" frameborder="0"></button>
+
       <p>Once again, some random text to lorem lorem lorem lorem ipsum text praesent tincidunt ipsum lipsum.</p>
     </div>	
     <div class="w3-quarter">
@@ -85,16 +102,7 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Karma", sans-serif}
       <p>Once again, some random text to lorem lorem lorem lorem ipsum text praesent tincidunt ipsum lipsum.</p>
     </div>
 
-    <div class="w3-quarter">
-      <img src="/w3images/sandwich.jpg" alt="Sandwich" style="width:100%">
-      <h3>The Perfect Sandwich, A Real Classic</h3>
-      <p>Just some random text, lorem ipsum text praesent tincidunt ipsum lipsum.</p>
-    </div>
-    <div class="w3-quarter">
-      <img src="/w3images/croissant.jpg" alt="Croissant" style="width:100%">
-      <h3>Le French</h3>
-      <p>Lorem lorem lorem lorem ipsum text praesent tincidunt ipsum lipsum.</p>
-    </div>
+
   </div>
 
   <!-- Pagination 
@@ -142,6 +150,9 @@ function w3_close() {
   document.getElementById("mySidebar").style.display = "none";
 }
 </script>
+
+<script src='https://code.createjs.com/easeljs-0.7.1.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.0/TweenMax.min.js'></script><script  src="grayscale-ambient-background/script.js"></script>
 
 </body>
 </html>
