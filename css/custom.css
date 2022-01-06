@@ -1,7 +1,29 @@
-.w3-color-99a9b8{
-	background-color:#99a9b8
+.w3-color-light{
+	background-color:#e8c1ee
 }
 
-.w3-color-d8dee4{
-	background-color:#d8dee4
+.popup-limits
+{
+	height:80%;
+	width:80%;
+	max-height:80%;
+	max-width:80%;
+}
+
+.card{
+	float: left;
+	width: 32%;
+	border: solid;
+	border-color: #e8c1ee;
+	background-color:#e8c1ee7f;
+	margin:2px;
+	height:300px;
+}
+
+.card-text{
+	white-space: pre-wrap;	
+}
+
+.w3-color-dark{
+	background-color:#b883bf
 }
