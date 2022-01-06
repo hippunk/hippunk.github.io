@@ -8,13 +8,14 @@
 	height:100%;
 	--background-end-color: #99a9b8;
 	--background-main-color:  #d8dee4;
+	--background-fill-height:  90%;
 	background: var(--background-main-color); /* Old browsers */
-	background: -moz-linear-gradient(0deg,  var(--background-main-color) 50%, var(--background-end-color) 100%); /* FF3.6+ */
-	background: -webkit-gradient(linear, left top, right bottom, color-stop(50%,var(--background-main-color)), color-stop(100%,var(--background-end-color))); /* Chrome,Safari4+ */
-	background: -webkit-linear-gradient(0deg,  var(--background-main-color) 50%,var(--background-end-color) 100%); /* Chrome10+,Safari5.1+ */
-	background: -o-linear-gradient(0deg,  var(--background-main-color) 50%,var(--background-end-color) 100%); /* Opera 11.10+ */
-	background: -ms-linear-gradient(0deg,  var(--background-main-color) 50%,var(--background-end-color) 100%); /* IE10+ */
-	background: linear-gradient(0deg,  var(--background-main-color) 50%,var(--background-end-color) 100%); /* W3C */
+	background: -moz-linear-gradient(0deg,  var(--background-main-color) 50%, var(--background-end-color) var(--background-fill-height)); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, right bottom, color-stop(50%,var(--background-main-color)), color-stop(var(--background-fill-height),var(--background-end-color))); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(0deg,  var(--background-main-color) 50%,var(--background-end-color) var(--background-fill-height)); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(0deg,  var(--background-main-color) 50%,var(--background-end-color) var(--background-fill-height)); /* Opera 11.10+ */
+	background: -ms-linear-gradient(0deg,  var(--background-main-color) 50%,var(--background-end-color) var(--background-fill-height)); /* IE10+ */
+	background: linear-gradient(0deg,  var(--background-main-color) 50%,var(--background-end-color) var(--background-fill-height)); /* W3C */
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='var(--background-main-color)', endColorstr='var(--background-end-color)',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
 	background-attachment: fixed
 } 
