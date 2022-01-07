@@ -10,9 +10,16 @@
 	max-width:80%;
 }
 
+.resize {
+  width: 60%;
+  resize: both;
+  overflow: auto;
+}
+
 .card{
-	float: left;
+	float: center;
 	width: 32%;
+	min-width:250px;
 	border: solid;
 	border-color: #e8c1ee;
 	background-color:#e8c1ee7f;
