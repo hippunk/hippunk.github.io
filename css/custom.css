@@ -6,14 +6,16 @@
 {
 	height:80%;
 	width:80%;
-	max-height:80%;
-	max-width:80%;
 }
 
 .resize {
   width: 60%;
   resize: both;
   overflow: auto;
+}
+
+.noscroll { 
+  overflow: hidden;
 }
 
 .card{
