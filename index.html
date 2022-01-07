@@ -12,94 +12,52 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Karma", sans-serif}
 .w3-bar-block .w3-bar-item {padding:20px}
 </style>
 
+<script>
+// Script to open and close sidebar
+function w3_open() {
+  document.getElementById("mySidebar").style.display = "block";
+
+}
+ 
+function w3_close() {
+  document.getElementById("mySidebar").style.display = "none";
+}
+
+function disable_scroll() {
+	document.documentElement.style.overflow = 'hidden';
+}
+
+function enable_scroll() {
+	document.documentElement.style.overflow = 'visible';
+}
+
+function generate_card(tittle, thumbnail, description, content) {
+	var popup_name = "popup_"+tittle.replaceAll(" ","_").toLowerCase();
+
+	var template = `
+	<div onclick=\"document.getElementById('${popup_name}').style.display='block';disable_scroll();\" class=\"w3-btn card w3-round-large\"> 
+		<h3>${tittle}</h3>
+		<img class=\"w3-round-large\" src=${thumbnail} width=\"208\" height=\"167\" frameborder=\"0\"/>
+		<p class=\"card-text\">${description}</p>
+	</div>
+	<div id=${popup_name} class=\"w3-center w3-animate-opacity  w3-modal \">
+		<div class=\"w3-display-middle  w3-card-4 popup-limits\">
+		<header class=\"w3-container w3-color-dark\"> 
+			<span onclick=\"document.getElementById('${popup_name}').style.display='none';document.getElementById('vid').pause();enable_scroll();\" class=\"w3-button w3-display-topright\">&times;</span>
+			<h2>${tittle}</h2>
+		</header>
+		<div class=\"w3-container w3-color-light\">		
+			${content}
+		</div>
+	  </div>
+	</div>
+	`;
+	return template;
+}
+</script>
+
 <body>
 <canvas id="projector">Your browser does not support the Canvas element.</canvas>
-  
-<!-- Popups -->
-<div id="popup_axe" class="w3-center w3-animate-opacity  w3-modal ">
-  <div class="w3-display-middle  w3-card-4 popup-limits">
-    <header class="w3-container w3-color-dark"> 
-      <span onclick="document.getElementById('popup_axe').style.display='none';enable_scroll();" class="w3-button w3-display-topright">&times;</span>
-      <h2>Axe and Roses</h2>
-    </header>
-    <div class="w3-container w3-color-light">		
-	  <p ><img style="margin:5px" src="https://img.itch.zone/aW1hZ2UvMjQ5ODI5LzEyMjQyMTUuanBn/250x600/JGgfZ5.jpg" width="60%" border="1px"/></p>
-      <p>Thank to pop me out of that button, but now i'm done so you can close this window.			Thank to pop me out of that button, but now i'm done so you can close this window.			Thank to pop me out of that button, but now i'm done so you can close this window.			Thank to pop me out of that button, but now i'm done so you can close this window.			Thank to pop me out of that button, but now i'm done so you can close this window.</p>
-      <iframe src="https://itch.io/embed/249829" width="552" height="167" frameborder="0" class="resize"><a href="https://ntzschbtzsch.itch.io/axe-and-roses">Axe and Roses by NtzschBtzsch, Hippunk</a></iframe>
-	</div>
-  </div>
-</div>
-
-<div id="popup_bubble" class="w3-center w3-animate-opacity  w3-modal">
-  <div class="w3-display-middle  w3-card-4 popup-limits">
-    <header class="w3-container w3-color-dark"> 
-      <span onclick="document.getElementById('popup_bubble').style.display='none';enable_scroll();" class="w3-button w3-display-topright">&times;</span>
-      <h2>Bubble Sort</h2>
-    </header>
-    <div class="w3-container w3-color-light">
-
-		<p ><img style="margin:5px" src="https://img.itch.zone/aW1hZ2UvNTIyMjEyLzI3Mjg1MjkuZ2lm/250x600/shsi3s.gif" width="60%" border="1px"/></p>
-		<p >Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text</p>
-	      
-      <iframe src="https://itch.io/embed/522212" width="552" height="167" frameborder="0" class="resize"><a href="https://hippunk.itch.io/bubblesort">BubbleSort by Hippunk</a></iframe>
-	</div>
-  </div>
-</div>
-
-<div id="popup_clone" class="w3-center w3-animate-opacity  w3-modal">
-  <div class="w3-display-middle  w3-card-4 popup-limits">
-    <header class="w3-container w3-color-dark"> 
-      <span onclick="document.getElementById('popup_clone').style.display='none';document.getElementById('vid').pause();enable_scroll();" class="w3-button w3-display-topright">&times;</span>
-      <h2>Clone</h2>
-    </header>
-    <div class="w3-container w3-color-light">
-		<video id="vid" style="margin:5px" controls="" width="60%">
-			<source src="https://media.univ-jfc.fr/videos/MEDIA181120111737116/multimedia/MEDIA181120111737116.mp4" type="video/mp4">
-		</video>
-		<p>Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text</p>
-		<a style="margin:5px" href="https://www.univ-jfc.fr/actu/clone-un-serious-game-dedie-lorganisation-du-travail-en-milieu-hospitalier">CLONE : un "serious game" dédié à l'organisation du travail en milieu hospitalier</a>
-    </div>
-  </div>
-</div>
-
-<div id="popup_didgeribug" class="w3-center w3-animate-opacity  w3-modal">
-  <div class="w3-display-middle  w3-card-4 popup-limits">
-    <header class="w3-container w3-color-dark"> 
-      <span onclick="document.getElementById('popup_didgeribug').style.display='none';enable_scroll();" class="w3-button w3-display-topright">&times;</span>
-      <h2>Didgeribug</h2>
-    </header>
-    <div class="w3-container w3-color-light">
-      <p>Thank to pop me out of that button, but now i'm done so you can close this window.			Thank to pop me out of that button, but now i'm done so you can close this window.			Thank to pop me out of that button, but now i'm done so you can close this window.			Thank to pop me out of that button, but now i'm done so you can close this window.			Thank to pop me out of that button, but now i'm done so you can close this window.</p>
-      <iframe src="https://itch.io/embed/203634" width="552" height="167" frameborder="0" class="resize"><a href="https://hippunk.itch.io/didgeribug-post-ludum">Didgeribug Post-Ludum by Hippunk</a></iframe>
-	</div>
-  </div>
-</div>
-
-<div id="popup_immuno" class="w3-center w3-animate-opacity  w3-modal">
-  <div class="w3-display-middle  w3-card-4 popup-limits">
-    <header class="w3-container w3-color-dark"> 
-      <span onclick="document.getElementById('popup_immuno').style.display='none';enable_scroll();" class="w3-button w3-display-topright">&times;</span>
-      <h2>Immuno Wars</h2>
-    </header>
-    <div class="w3-container w3-color-light">
-      <p>Thank to pop me out of that button, but now i'm done so you can close this window.			Thank to pop me out of that button, but now i'm done so you can close this window.			Thank to pop me out of that button, but now i'm done so you can close this window.			Thank to pop me out of that button, but now i'm done so you can close this window.			Thank to pop me out of that button, but now i'm done so you can close this window.</p>
-      <iframe src="https://itch.io/embed/484551" width="552" height="167" frameborder="0" class="resize"><a href="https://hippunk.itch.io/immunowars">ImmunoWars by Hippunk</a></iframe>
-	</div>
-  </div>
-</div>
-
-<div id="popup_pizza" class="w3-center w3-animate-opacity  w3-modal">
-  <div class="w3-display-middle  w3-card-4 popup-limits">
-    <header class="w3-container w3-color-dark"> 
-      <span onclick="document.getElementById('popup_pizza').style.display='none';enable_scroll();" class="w3-button w3-display-topright">&times;</span>
-      <h2>Pizza YOLO</h2>
-    </header>
-    <div class="w3-container w3-color-light">
-      <p>Thank to pop me out of that button, but now i'm done so you can close this window.			Thank to pop me out of that button, but now i'm done so you can close this window.			Thank to pop me out of that button, but now i'm done so you can close this window.			Thank to pop me out of that button, but now i'm done so you can close this window.			Thank to pop me out of that button, but now i'm done so you can close this window.</p>
-      <iframe src="https://itch.io/embed/274160" width="552" height="167" frameborder="0" class="resize"><a href="https://hippunk.itch.io/pizzayolo">PizzaYOLO by Hippunk</a></iframe>
-	</div>
-  </div>
-</div>
 
 <!-- Sidebar (hidden by default) -->
 <nav class="w3-sidebar w3-bar-block w3-card w3-top w3-xlarge w3-animate-left" style="display:none;z-index:2;width:40%;min-width:300px" id="mySidebar">
@@ -132,48 +90,104 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Karma", sans-serif}
   <div class="w3-row-padding w3-padding-16 w3-center">
     <h3>My Work</h3><br>
 
-	<div onclick="document.getElementById('popup_axe').style.display='block';disable_scroll();" class="w3-btn card w3-round-large">
-		<h3>Axe and Roses</h3>
-		<img class="w3-round-large" src="https://img.itch.zone/aW1hZ2UvMjQ5ODI5LzEyMjQyMTMuanBn/315x250%23c/n907k3.jpg" width="208" height="167" frameborder="0"/>
-		<p class="card-text">Dating simulator dans un univers barbare.</p>
-	</div>
-
-	<div onclick="document.getElementById('popup_bubble').style.display='block';disable_scroll();" class="w3-btn card w3-round-large">
-      <h3>BubbleSort</h3>
-	  <img class="w3-round-large" src="https://img.itch.zone/aW1nLzI3Mjg1MDkucG5n/315x250%23c/1P0hp7.png" width="208" height="167" frameborder="0"/>
-      <p class="card-text">Mélange de 2048 et de Match 3.</p>
-	</div>
-    
-	<div onclick="document.getElementById('popup_clone').style.display='block';disable_scroll();" class="w3-btn card w3-round-large">
-      <h3>Clone</h3>
-	  <img class="w3-round-large" src="Images/Thumbnails/clone_thumbnail.png" width="208" height="167" frameborder="0"/>
-
-      <p class="card-text">Serious game pour la formation du personnel infirmier à l'organisation de l'emplois du temps.</p>
-
-	</div>	
-	
-	<div onclick="document.getElementById('popup_didgeribug').style.display='block';disable_scroll();" class="w3-btn card w3-round-large">
-      <h3>Didgeribug</h3>
-	  <img class="w3-round-large" src="https://img.itch.zone/aW1hZ2UvMjAzNjM0Lzk1MDQ1MC5qcGc=/315x250%23c/3MAvky.jpg" width="208" height="167" frameborder="0"/>
-      <p class="card-text">Shmup atmosphérique avec des ambies.</p>
-	</div>
-  
-	<button onclick="document.getElementById('popup_immuno').style.display='block';disable_scroll();" class="w3-btn card w3-round-large">
-		<h3>Immuno Wars</h3>
-		<img class="w3-round-large" src="https://img.itch.zone/aW1hZ2UvMjQ5ODI5LzEyMjQyMTMuanBn/315x250%23c/n907k3.jpg" width="208" height="167" frameborder="0"/>
-		<p class="card-text">Serious game sur le fonctionnement des défenses immunitaires.</p>
-	</button>
-
-
-    <button onclick="document.getElementById('popup_pizza').style.display='block';disable_scroll();" class="w3-btn card w3-round-large">
-      <h3>Pizza YOLO</h3>
-	  <img class="w3-round-large" src="https://img.itch.zone/aW1hZ2UvMjc0MTYwLzE0ODQwMzEucG5n/315x250%23c/gZT0g1.png" width="208" height="167" frameborder="0"/>
-
-      <p class="card-text">Clone étrange de paperboy.</p>
-    </button>
-
-
-  </div>
+	<script>
+		axe_content = 
+		`
+			<p><img style=\"margin:5px\" src=\"https://img.itch.zone/aW1hZ2UvMjQ5ODI5LzEyMjQyMTUuanBn/250x600/JGgfZ5.jpg\" width=\"60%\" border=\"1px\"/></p>
+			<p>Description goes here</p>
+			<iframe src=\"https://itch.io/embed/249829\" width=\"552\" height=\"167\" frameborder=\"0\" class=\"resize\"><a href=\"https://ntzschbtzsch.itch.io/axe-and-roses\">Axe and Roses by NtzschBtzsch, Hippunk</a></iframe>
+		`
+		
+		document.write(
+			generate_card(
+				"Axe and Roses",
+				"https://img.itch.zone/aW1hZ2UvMjQ5ODI5LzEyMjQyMTMuanBn/315x250%23c/n907k3.jpg",
+				"Dating simulator dans un univers barbare.",
+				axe_content
+			)
+		)
+		
+		bubble_content = 
+		`
+			<p ><img style="margin:5px" src="https://img.itch.zone/aW1hZ2UvNTIyMjEyLzI3Mjg1MjkuZ2lm/250x600/shsi3s.gif" width="60%" border="1px"/></p>
+			<p >Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text</p>
+			<iframe src="https://itch.io/embed/522212" width="552" height="167" frameborder="0" class="resize"><a href="https://hippunk.itch.io/bubblesort">BubbleSort by Hippunk</a></iframe>
+		`
+		
+		document.write(
+			generate_card(
+				"Bubble Sort",
+				"https://img.itch.zone/aW1nLzI3Mjg1MDkucG5n/315x250%23c/1P0hp7.png",
+				"Mélange de 2048 et de Match 3.",
+				bubble_content
+			)
+		)
+		
+		clone_content = 
+		`
+			<video id="vid" style="margin:5px" controls="" width="60%">
+				<source src="https://media.univ-jfc.fr/videos/MEDIA181120111737116/multimedia/MEDIA181120111737116.mp4" type="video/mp4">
+			</video>
+			<p>Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text</p>
+			<a style="margin:5px" href="https://www.univ-jfc.fr/actu/clone-un-serious-game-dedie-lorganisation-du-travail-en-milieu-hospitalier">CLONE : un "serious game" dédié à l'organisation du travail en milieu hospitalier</a>
+		`
+		
+		document.write(
+			generate_card(
+				"Clone",
+				"Images/Thumbnails/clone_thumbnail.png",
+				"Serious game pour la formation du personnel infirmier à l'organisation de l'emplois du temps.",
+				clone_content
+			)
+		)
+		
+		didgeribug_content = 
+		`
+			<p>Thank to pop me out of that button, but now i'm done so you can close this window.			Thank to pop me out of that button, but now i'm done so you can close this window.			Thank to pop me out of that button, but now i'm done so you can close this window.			Thank to pop me out of that button, but now i'm done so you can close this window.			Thank to pop me out of that button, but now i'm done so you can close this window.</p>
+			<iframe src="https://itch.io/embed/203634" width="552" height="167" frameborder="0" class="resize"><a href="https://hippunk.itch.io/didgeribug-post-ludum">Didgeribug Post-Ludum by Hippunk</a></iframe>
+		`
+		
+		document.write(
+			generate_card(
+				"Didgeribug",
+				"https://img.itch.zone/aW1hZ2UvMjAzNjM0Lzk1MDQ1MC5qcGc=/315x250%23c/3MAvky.jpg",
+				"Shmup atmosphérique avec des ambies.",
+				didgeribug_content
+			)
+		)
+		
+		immuno_content = 
+		`
+			<p>Thank to pop me out of that button, but now i'm done so you can close this window.			Thank to pop me out of that button, but now i'm done so you can close this window.			Thank to pop me out of that button, but now i'm done so you can close this window.			Thank to pop me out of that button, but now i'm done so you can close this window.			Thank to pop me out of that button, but now i'm done so you can close this window.</p>
+			<iframe src="https://itch.io/embed/484551" width="552" height="167" frameborder="0" class="resize"><a href="https://hippunk.itch.io/immunowars">ImmunoWars by Hippunk</a></iframe>
+		`
+		
+		document.write(
+			generate_card(
+				"Immuno Wars",
+				"",
+				"Serious game sur le fonctionnement des défenses immunitaires.",
+				immuno_content
+			)
+		)
+		
+		pizza_content = 
+		`
+			<p>Thank to pop me out of that button, but now i'm done so you can close this window.			Thank to pop me out of that button, but now i'm done so you can close this window.			Thank to pop me out of that button, but now i'm done so you can close this window.			Thank to pop me out of that button, but now i'm done so you can close this window.			Thank to pop me out of that button, but now i'm done so you can close this window.</p>
+			<iframe src="https://itch.io/embed/274160" width="552" height="167" frameborder="0" class="resize"><a href="https://hippunk.itch.io/pizzayolo">PizzaYOLO by Hippunk</a></iframe>
+		`
+		
+		document.write(
+			generate_card(
+				"Pizza YOLO",
+				"",
+				"Clone étrange de paperboy.",
+				pizza_content
+			)
+		)
+		
+	</script>
+    </div>
 
   <hr id="about">
 
@@ -215,31 +229,9 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Karma", sans-serif}
 <!-- End page content -->
 </div>
 
-
-
-<script>
-// Script to open and close sidebar
-function w3_open() {
-  document.getElementById("mySidebar").style.display = "block";
-
-}
- 
-function w3_close() {
-  document.getElementById("mySidebar").style.display = "none";
-}
-
-function disable_scroll() {
-	document.documentElement.style.overflow = 'hidden';
-}
-
-function enable_scroll() {
-	document.documentElement.style.overflow = 'visible';
-}
-
-</script>
-
 <script src='https://code.createjs.com/easeljs-0.7.1.min.js'></script>
 <script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.0/TweenMax.min.js'></script><script  src="grayscale-ambient-background/script.js"></script>
 
 </body>
 </html>
+
