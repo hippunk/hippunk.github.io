@@ -12,49 +12,7 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Karma", sans-serif}
 .w3-bar-block .w3-bar-item {padding:20px}
 </style>
 
-<script>
-// Script to open and close sidebar
-function w3_open() {
-  document.getElementById("mySidebar").style.display = "block";
-
-}
- 
-function w3_close() {
-  document.getElementById("mySidebar").style.display = "none";
-}
-
-function disable_scroll() {
-	document.documentElement.style.overflow = 'hidden';
-}
-
-function enable_scroll() {
-	document.documentElement.style.overflow = 'visible';
-}
-
-function generate_card(tittle, thumbnail, description, content) {
-	var popup_name = "popup_"+tittle.replaceAll(" ","_").toLowerCase();
-
-	var template = `
-	<div onclick=\"document.getElementById('${popup_name}').style.display='block';disable_scroll();\" class=\"w3-btn card w3-round-large\"> 
-		<h3>${tittle}</h3>
-		<img class=\"w3-round-large\" src=${thumbnail} width=\"208\" height=\"167\" frameborder=\"0\"/>
-		<p class=\"card-text\">${description}</p>
-	</div>
-	<div id=${popup_name} class=\"w3-center w3-animate-opacity  w3-modal \">
-		<div class=\"w3-display-middle  w3-card-4 popup-limits\">
-		<header class=\"w3-container w3-color-dark\"> 
-			<span onclick=\"document.getElementById('${popup_name}').style.display='none';document.getElementById('vid').pause();enable_scroll();\" class=\"w3-button w3-display-topright\">&times;</span>
-			<h2>${tittle}</h2>
-		</header>
-		<div class=\"w3-container w3-color-light\">		
-			${content}
-		</div>
-	  </div>
-	</div>
-	`;
-	return template;
-}
-</script>
+<script src='custom_scripts.js'></script>
 
 <body>
 <canvas id="projector">Your browser does not support the Canvas element.</canvas>
@@ -91,7 +49,7 @@ function generate_card(tittle, thumbnail, description, content) {
     <h3>My Work</h3><br>
 
 	<script>
-		axe_content = 
+		var axe_content = 
 		`
 			<p><img style=\"margin:5px\" src=\"https://img.itch.zone/aW1hZ2UvMjQ5ODI5LzEyMjQyMTUuanBn/250x600/JGgfZ5.jpg\" width=\"60%\" border=\"1px\"/></p>
 			<p>Description goes here</p>
@@ -107,7 +65,7 @@ function generate_card(tittle, thumbnail, description, content) {
 			)
 		)
 		
-		bubble_content = 
+		var bubble_content = 
 		`
 			<p ><img style="margin:5px" src="https://img.itch.zone/aW1hZ2UvNTIyMjEyLzI3Mjg1MjkuZ2lm/250x600/shsi3s.gif" width="60%" border="1px"/></p>
 			<p >Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text Text</p>
@@ -123,7 +81,7 @@ function generate_card(tittle, thumbnail, description, content) {
 			)
 		)
 		
-		clone_content = 
+		var clone_content = 
 		`
 			<video id="vid" style="margin:5px" controls="" width="60%">
 				<source src="https://media.univ-jfc.fr/videos/MEDIA181120111737116/multimedia/MEDIA181120111737116.mp4" type="video/mp4">
@@ -141,7 +99,7 @@ function generate_card(tittle, thumbnail, description, content) {
 			)
 		)
 		
-		didgeribug_content = 
+		var didgeribug_content = 
 		`
 			<p>Thank to pop me out of that button, but now i'm done so you can close this window.			Thank to pop me out of that button, but now i'm done so you can close this window.			Thank to pop me out of that button, but now i'm done so you can close this window.			Thank to pop me out of that button, but now i'm done so you can close this window.			Thank to pop me out of that button, but now i'm done so you can close this window.</p>
 			<iframe src="https://itch.io/embed/203634" width="552" height="167" frameborder="0" class="resize"><a href="https://hippunk.itch.io/didgeribug-post-ludum">Didgeribug Post-Ludum by Hippunk</a></iframe>
@@ -156,7 +114,7 @@ function generate_card(tittle, thumbnail, description, content) {
 			)
 		)
 		
-		immuno_content = 
+		var immuno_content = 
 		`
 			<p>Thank to pop me out of that button, but now i'm done so you can close this window.			Thank to pop me out of that button, but now i'm done so you can close this window.			Thank to pop me out of that button, but now i'm done so you can close this window.			Thank to pop me out of that button, but now i'm done so you can close this window.			Thank to pop me out of that button, but now i'm done so you can close this window.</p>
 			<iframe src="https://itch.io/embed/484551" width="552" height="167" frameborder="0" class="resize"><a href="https://hippunk.itch.io/immunowars">ImmunoWars by Hippunk</a></iframe>
@@ -171,7 +129,7 @@ function generate_card(tittle, thumbnail, description, content) {
 			)
 		)
 		
-		pizza_content = 
+		var pizza_content = 
 		`
 			<p>Thank to pop me out of that button, but now i'm done so you can close this window.			Thank to pop me out of that button, but now i'm done so you can close this window.			Thank to pop me out of that button, but now i'm done so you can close this window.			Thank to pop me out of that button, but now i'm done so you can close this window.			Thank to pop me out of that button, but now i'm done so you can close this window.</p>
 			<iframe src="https://itch.io/embed/274160" width="552" height="167" frameborder="0" class="resize"><a href="https://hippunk.itch.io/pizzayolo">PizzaYOLO by Hippunk</a></iframe>
@@ -180,7 +138,7 @@ function generate_card(tittle, thumbnail, description, content) {
 		document.write(
 			generate_card(
 				"Pizza YOLO",
-				"",
+				"https://img.itch.zone/aW1hZ2UvMjc0MTYwLzE0ODQwMzEucG5n/315x250%23c/gZT0g1.png",
 				"Clone étrange de paperboy.",
 				pizza_content
 			)
