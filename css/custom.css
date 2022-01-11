@@ -1,5 +1,11 @@
+:root{
+	--shading-begin: #ff9300;
+	--shading-end: #ffc900;
+	--card-background:#e8c1ee7f;
+}
+
 .w3-color-light{
-	background-color:#e8c1ee
+	background-color:var(--shading-end);
 }
 
 .popup-limits
@@ -24,8 +30,8 @@ overflow-y: auto;
 	width: 32%;
 	min-width:250px;
 	border: solid;
-	border-color: #e8c1ee;
-	background-color:#e8c1ee7f;
+	border-color: var(--shading-end);
+	background-color:var(--card-background);
 	margin:2px;
 	height:330px;
 }
@@ -35,5 +41,5 @@ overflow-y: auto;
 }
 
 .w3-color-dark{
-	background-color:#b883bf
+	background-color:var(--shading-begin);
 }
