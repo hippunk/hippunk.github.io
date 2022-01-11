@@ -28,7 +28,7 @@ function generate_card(title, thumbnail, description, content) {
 	<div id=${popup_name} class=\"w3-center w3-animate-opacity  w3-modal \">
 		<div class=\"w3-display-middle  w3-card-4 popup-limits\">
 		<header class=\"w3-container w3-color-dark\" style="position: sticky; top:0;"> 
-			<span onclick=\"document.getElementById('${popup_name}').style.display='none';document.getElementById('vid').pause();enable_scroll();\" class=\"w3-button w3-display-topright\">&times;</span>
+			<span onclick=\"document.getElementById('${popup_name}').style.display='none';document.querySelectorAll('video').forEach(vid => vid.pause());enable_scroll();\" class=\"w3-button w3-display-topright\">&times;</span>
 			<h2>${title}</h2>
 		</header>
 		<div class=\"w3-container w3-color-light\" >		

@@ -138,7 +138,7 @@ Nous avons mis en application ces outils pour développer la visite virtuelle de
 	<script>
 		var axe_content = 
 		`
-			<p><img alt="Capture d'écran du jeu Axe and Roses" style=\"margin:5px\" src=\"https://img.itch.zone/aW1hZ2UvMjQ5ODI5LzEyMjQyMTUuanBn/250x600/JGgfZ5.jpg\" width=\"60%\" border=\"1px\"/></p>
+			<p><img alt="Capture d'écran du jeu Axe and Roses" style=\"margin:5px;width:60%;\" src=\"https://img.itch.zone/aW1hZ2UvMjQ5ODI5LzEyMjQyMTUuanBn/250x600/JGgfZ5.jpg\"/></p>
 			<p>Description goes here</p>
 			<iframe src=\"https://itch.io/embed/249829\" width=\"552\" height=\"167\" class=\"resize\"></iframe>
 		`
@@ -185,14 +185,15 @@ Nous avons mis en application ces outils pour développer la visite virtuelle de
 		
 		var immuno_content = 
 		`
-			<p>Thank to pop me out of that button, but now i'm done so you can close this window.			Thank to pop me out of that button, but now i'm done so you can close this window.			Thank to pop me out of that button, but now i'm done so you can close this window.			Thank to pop me out of that button, but now i'm done so you can close this window.			Thank to pop me out of that button, but now i'm done so you can close this window.</p>
+			<p><img alt="Gif animé du jeu ImmunoWars" style=\"margin:5px;width:40%;\" src=\"Images/Screenshots/immuno.gif\"/></p>
+			<p>ImmunoWars est un Serious Game réalisé dans le cadre de mon master prennant la forme jeu de stratégie temps réel dont le but est d'empecher une infection de se propager en comprenant le fonctionnement des défenses immunitaires. Ce projet à été réalisé en équipe de 4 sous Unity en C# en utilisant le framework ECS "FyFy "développé en interne par le laboratoire. L'expertise pédagogique a été fournie dans le cadre du projet.</p>
 			<iframe src="https://itch.io/embed/484551" width="552" height="167" class="resize"></iframe>
 		`
 		
 		document.write(
 			generate_card(
 				"Immuno Wars",
-				"",
+				"Images/Thumbnails/immuno.png",
 				"Serious game sur le fonctionnement des défenses immunitaires.",
 				immuno_content
 			)
@@ -200,7 +201,10 @@ Nous avons mis en application ces outils pour développer la visite virtuelle de
 		
 		var pizza_content = 
 		`
-			<p>Thank to pop me out of that button, but now i'm done so you can close this window.			Thank to pop me out of that button, but now i'm done so you can close this window.			Thank to pop me out of that button, but now i'm done so you can close this window.			Thank to pop me out of that button, but now i'm done so you can close this window.			Thank to pop me out of that button, but now i'm done so you can close this window.</p>
+			<video id="vid" style="margin:5px;width:50%;" controls="">
+				<source src="Images/Screenshots/pizza.mp4" type="video/mp4">
+			</video>
+			<p>Pizza YOLO est un petit projet réalisé en 24h au FabLab d'Albi dans le cadre d'une Game Jam. Ce projet a été réalisé avec deux autres personnes du FabLab et a servi d'initiation au développement de jeux. Les Assets du jeu ont été réalisés par les autres participants. Ce jeu est une tentative de clone de paperboy, les pizzas remplaçant les journaux. Le but est de livrer les pizzas aux bonnes maisons en évitant les obstacles</p>
 			<iframe src="https://itch.io/embed/274160" width="552" height="167" class="resize"></iframe>
 		`
 		
