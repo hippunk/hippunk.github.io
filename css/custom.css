@@ -33,7 +33,7 @@ overflow-y: auto;
 	border-color: var(--shading-end);
 	background-color:var(--card-background);
 	margin:2px;
-	height:330px;
+	height:350px;
 }
 
 .card-text{
