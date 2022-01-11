@@ -22,7 +22,7 @@ function generate_card(title, thumbnail, description, content) {
 	var template = `
 	<div onclick=\"document.getElementById('${popup_name}').style.display='block';disable_scroll();\" class=\"w3-btn card w3-round-large\"> 
 		<h3>${title}</h3>
-		<img alt="Thumbnail du projet ${title}" class=\"w3-round-large\" src=${thumbnail} width=\"208\" height=\"167\" frameborder=\"0\"/>
+		<img alt="Thumbnail du projet ${title}" class=\"w3-round-large\" src=${thumbnail} width=\"208\" height=\"167\"/>
 		<p class=\"card-text\">${description}</p>
 	</div>
 	<div id=${popup_name} class=\"w3-center w3-animate-opacity  w3-modal \">
