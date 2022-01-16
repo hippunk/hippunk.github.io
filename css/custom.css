@@ -1,15 +1,17 @@
-:root{
-	--shading-begin: #ff9300;
-	--shading-end: #ffc900;
-	--card-background:#e8c1ee7f;
+.card-content-color{
+	background-color:#ffd886;
 }
 
-.w3-color-light{
-	background-color:var(--shading-end);
+.card-header-color{
+	background-color:#ffc900;
 }
 
-.w3-color-dark{
-	background-color:var(--shading-begin);
+.header-color{
+	background-color:#ffc900;
+}
+
+.menu-color{
+	background-color:#f3c51a;
 }
 
 :target {
@@ -22,8 +24,8 @@
 .popup-limits
 {
 overflow-y: auto;
-	width:80%;
-	max-height:80%;
+	width:90%;
+	max-height:90%;
 }
 
 .resize {
@@ -41,8 +43,8 @@ overflow-y: auto;
 	width: 32%;
 	min-width:250px;
 	border: solid;
-	border-color: var(--shading-end);
-	background-color:var(--card-background);
+	border-color: #eebc00;
+	background-color:#f4cc78;
 	margin:2px;
 	height:350px;
 }

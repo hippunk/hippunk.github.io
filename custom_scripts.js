@@ -31,11 +31,11 @@ function generate_card(title, thumbnail, description, content) {
 	<div id=${popup_name} class=\"w3-center w3-animate-opacity  w3-modal\"  onclick=\"close_popup('${popup_name}');\" >
 		
 		<div class=\"w3-display-middle w3-card-4 popup-limits\" onclick=\"event.stopPropagation();\">
-			<header class=\"w3-container w3-color-dark\" style="position: sticky; top:0;" > 
+			<header class=\"w3-container card-header-color\" style="position: sticky; top:0;" > 
 				<span onclick=\"close_popup('${popup_name}');\" class=\"w3-button w3-xlarge w3-display-topright\">&times;</span>
 				<h2>${title}</h2>
 			</header>
-			<div class=\"w3-container w3-color-light\" >		
+			<div class=\"w3-container card-content-color\" >		
 				${content}
 			</div>
 		</div>
